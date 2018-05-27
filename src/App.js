@@ -1,21 +1,26 @@
-import React, { Component } from 'react';
-import logo from './assets/images/logo.svg';
+import React, {Component} from 'react';
+
+/* Strings */
+import strings from './config/strings';
+
+/* Style */
 import './assets/styles/App.css';
 
-class App extends Component {
-  render() {
+/* Components */
+import AppHeader from "Components/Appheader/Appheader";
+import PhraseSearch from "Components/PhraseSearch/PhraseSearch";
+import SentimentResults from "Components/SentimentResults/SentimentResults";
+import Comments from "Components/Comments/Comments";
+
+const App = () => {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <div className="AppWrapper" >
+            <AppHeader title={strings.REDDIT_SENTIMENT_ANALYSER} intro={strings.THIS_IS_A_SIMPLE_LITTLE_TOOL} />
+            <PhraseSearch />
+            <SentimentResults />
+            <Comments />
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+    )
+};
 
 export default App;
